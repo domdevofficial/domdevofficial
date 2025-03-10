@@ -1,0 +1,42 @@
+name: Wala to #wala
+#ok nato 
+on:
+  schedule:
+    - cron: "* * * * *"  
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate random quote
+        run: |
+          quotes=("Ok nato. 🚀"
+                  "Bahala na si Batman! 🦇"
+                  "Walang forever, pero may bug fixes. 🛠️"
+                  "Code ko ‘to, huwag mong galawin! 🔥"
+                  "Ang buhay ay parang code, minsan walang output. 🤷‍♂️"
+                  "Error 404: Motivation Not Found. 💤"
+                  "Di baleng late, basta running ang code. 🏃‍♂️"
+                  "Keyboard lang ang nilalandi, hindi tao. ⌨️❤️"
+                  "Commit na ‘to, bahala na si boss. 😆"
+                  "Push mo lang yan, wala namang magre-review. 💀"
+                  "Tulog muna bago debug. 😴"
+                  "Ang tunay na programmer, marunong mag Google. 🔍"
+                  "Huwag kang mag-expect, hindi yan PHP function. 💔"
+                  "Kapag pagod na, CTRL + ALT + DELETE nalang. 🔄"
+                  "Sa code, walang feelings... Pero bakit bug ang sakit? 😭"
+                  "Trabaho lang, walang personalan... maliban sa syntax error. ⚡")
+          RANDOM_QUOTE=${quotes[$RANDOM % ${#quotes[@]}]}
+          sed -i "s|> **\"cc\"**|> **\"$RANDOM_QUOTE\"**|" README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Updated random Tagalog quote in README"
+          git push
