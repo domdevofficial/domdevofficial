@@ -6,7 +6,7 @@ Welcome to my GitHub profile! I'm a passionate programmer who loves building **s
 ---
 
 ## 💡 Random Quote  
-> **"ok nato"**
+> **"Ang buhay ay parang code, minsan walang output. 🤷‍♂️"**
 
 
 ---
