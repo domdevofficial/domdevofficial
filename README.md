@@ -1,4 +1,4 @@
-# 👋 Hey, I'm Domzkee!  
+# 👋 Hey, I'm DomDev!  
 ## 🚀 Full-Stack Developer | AI Enthusiast | Web Hosting Specialist  
 
 Welcome to my GitHub profile! I'm a passionate programmer who loves building **secure, responsive, and feature-rich** web applications.  
